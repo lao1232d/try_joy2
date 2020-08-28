@@ -1,15 +1,39 @@
 package com.lw.pojo;
 
+
+import com.sun.istack.internal.*;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
+
 public class Employee {
-
-
     private Integer eid;
+
+    @NotEmpty(message = "名字不能为空")
     private String ename;
-    private char sex;
+
+    private String sex;
+
+    @Max(value = 120,message = "年龄最大120")
+    @Min(value = 1,message = "年龄最小为1岁")
     private int age;
+
     private String address;
 
-    public Employee(Integer eid, String ename, char sex, int age, String address) {
+    public Employee(){
+
+    }
+
+    public Employee(String ename, String sex, int age, String address) {
+        this.ename = ename;
+        this.sex = sex;
+        this.age = age;
+        this.address = address;
+    }
+
+    public Employee(Integer eid, String ename, String sex, int age, String address) {
         this.eid = eid;
         this.ename = ename;
         this.sex = sex;
@@ -17,11 +41,12 @@ public class Employee {
         this.address = address;
     }
 
+
     public Integer getEid() {
         return eid;
     }
 
-    public void setEid(Long id) {
+    public void setEid(Integer eid) {
         this.eid = eid;
     }
 
@@ -33,11 +58,11 @@ public class Employee {
         this.ename = ename;
     }
 
-    public char getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 

@@ -19,6 +19,8 @@
     <mvc:default-servlet-handler/>
     <context:component-scan base-package="com.lw.controller"/>
 
+
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp"/>
         <property name="suffix" value=".jsp"/>

@@ -5,23 +5,19 @@
 <mapper namespace="com.lw.dao.EmployeeMapper">
 
     <insert id="add" parameterType="Employee">
-        insert into denglu.Employee (ename, age, sex, address)
+        insert into denglu.Employee (ename, age, sex, address) values (#{ename}, #{age}, #{sex},#{address})
     </insert>
 
-    <delete id="deleteEmployeeById" parameterType="Long">
+    <delete id="deleteEmployeeById" parameterType="Integer">
         delete from denglu.Employee where eid = #{eid}
     </delete>
-
-<!--    deleteEmployeeById(Long id)-->
-
-<!--    updateEmployee(Employee employee)-->
 
     <update id="updateEmployee" parameterType="Employee">
         update denglu.Employee
         set ename = #{ename},age = #{age}, sex = #{sex}, address = #{address}
     </update>
 
-    <select id="queryAll" resultType="List">
+    <select id="queryAll" resultType="Employee">
         select * from denglu.Employee
     </select>
 

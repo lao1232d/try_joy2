@@ -39,4 +39,14 @@
     <session-timeout>15</session-timeout>
   </session-config>
 
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/server_error.jsp</location>
+  </error-page>
+
 </web-app>
